@@ -10,6 +10,7 @@ export class DatabindingComponent implements OnInit {
   isDisable:boolean=true;
   propertyText="this is testing property data binding"
   serverCreated = "Not yet"
+  inputValue=""
 
   constructor() {
     
@@ -27,6 +28,10 @@ export class DatabindingComponent implements OnInit {
 
   clickHandler(){
     this.serverCreated="Server has created"
+  }
+
+  inputChangeHandler(evt){
+    this.inputValue=evt.target.value
   }
 
 }
