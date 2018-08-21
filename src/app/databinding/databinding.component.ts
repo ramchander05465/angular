@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatabindingComponent implements OnInit {
   componentTitle:string="Learing data bidnig"
-  isDisable:boolean=false;
+  isDisable:boolean=true;
   propertyText="this is testing property data binding"
+  serverCreated = "Not yet"
 
   constructor() {
     
@@ -16,12 +17,16 @@ export class DatabindingComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.isDisable = true
+      this.isDisable = false
     }, 4000)
   }
 
   getComponentDetails(){
     return 'going to implement string interpolation'
+  }
+
+  clickHandler(){
+    this.serverCreated="Server has created"
   }
 
 }
