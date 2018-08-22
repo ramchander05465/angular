@@ -2,35 +2,19 @@
   <div class="row">
     <div class="col-xl-12">
       <h3>
-        String Interpolation
+        Directive
       </h3>
       <hr />
-      <p>{{componentTitle}} works!</p>
-      <hr />
-      <p>{{getComponentDetails()}}</p>
-    </div>
+      <p *ngIf="!isDisable" [ngStyle]="{color:'red'}">No Server</p>
+      <p [ngClass]="{online : isDisable == 'true'}">this server is online</p>
   </div>
+
   <div class="row">
     <div class="col-xl-12">
-      <h3>Property Data binding</h3>
-      <button class="btn btn-primary" 
-        (click)="clickHandler()"
-        [disabled]="isDisable">Property Data Binding</button>
-      <p [innerText]="propertyText"></p>
-      <p>Event == {{serverCreated}}</p>
+      <ul>
+        <li *ngFor="let user of userlist">{{user}}</li>
+      </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xl-12">
-      <input type="text" (input)="inputChangeHandler($event)" />
-      <p>{{inputValue}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xl-12">
-      
-      <input type="text" [(ngModel)] = "inputValue" />
-      <p>{{inputValue}}</p>
-    </div>
-  </div>
+  
 </div>

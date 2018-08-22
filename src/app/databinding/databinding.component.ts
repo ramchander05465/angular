@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-databinding',
   templateUrl: './databinding.component.html',
-  styleUrls: ['./databinding.component.css']
+  styleUrls: ['./databinding.component.css'],
+  styles:[`.online:{
+    color:blue
+  }`]
 })
 export class DatabindingComponent implements OnInit {
   componentTitle:string="Learing data bidnig"
@@ -11,6 +14,8 @@ export class DatabindingComponent implements OnInit {
   propertyText="this is testing property data binding"
   serverCreated = "Not yet"
   inputValue=""
+
+  userlist = ['Ram', 'Shyam', 'Sohan', 'Mohan']
 
   constructor() {
     
