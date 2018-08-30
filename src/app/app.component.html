@@ -2,5 +2,23 @@
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
+    {{message$ | async}}
   </h1>
+  <button (click)="spanishMessage()">Spanish</button>
+  <button (click)="englishMessage()">English</button>
+
+  <hr />
+  <div *ngIf="post$ | async as p">
+    <h2>{{p.textData}}</h2>
+    <h4>{{p.likes}}</h4>
+    <div>
+      <button (click) = "upVote()">Up Vote</button>
+      <button (click) = "downVote()">Up Down</button>
+      <button (click) = "reset()">Reset</button>
+    </div>
+    <div>
+      <input type="text" [(ngModel)] = "textData" > 
+      <button (click) = "editText()">Edit</button>
+    </div>
+  </div>
 </div>
